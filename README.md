@@ -4,25 +4,13 @@ Clone and run application
 
     Run react front end
 
-    git clone git@github.com:StephenArg/react_twoislandbridge_practice.git
+    git clone git@github.com:StephenArg/Image-carousel.git
     npm install
 
-    After installing packages, create a file called .env in the main directory and add this line to it. REACT_APP_API_LOCATION=localhost:3001 After this, run npm start
+    npm start
 
-A chat application that pairs its users randomly and allows for websocket-enabled text chat and video conferencing between the participants.
-What's being used:
+Example of simple image carousel using React.
 
-    React
-    Rails
-    ActionCable
-    OpenTok Video Chat embeds
-    PostgreSQL
+I recently completed an interview where we talked about creating a random image carousel component that cycles through the images using a randomizer. Since the exercise was on paper, I felt it best to try to build it afterwards to see it in action. I was able to learn from the interviewer about how setInterval returns a reference value that you can later use while unmounting to stop said interval.
 
-Stretch Features:
-
-    Create user profiles and more customizability (Full CRUD).
-    Add Redux for better state management.
-    Present column alongside chat box to display previous matches with the ability to rate them, attempt to reconnect to them, block them, review past text conversations, and more.
-    Create a rating system the determines which individuals a user will match with.
-    Add a nudity sensing api to auto-ban policy breaking users.
-    Improve design, rework name, and add routes.
+setInterval, which intializes when the component mounts, calls a function which creates a random unused index to pull a url from an array containing multiple url strings. That function then changes the current image url being used in the image tag by updating the state, while also adding that index to an array in the state so that every image must be shown before showing it again.
